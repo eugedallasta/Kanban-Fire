@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+// Angular Material
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { TaskComponent } from './task/task.component';
@@ -14,6 +14,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { TaskDialogComponent } from './task-dialog/task-dialog.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+// FireBase
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatDialogModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
+
 
   ],
   providers: [],
